@@ -1,12 +1,12 @@
-<h1>Cập nhật thông tin sản phẩm</h1>
-<form [formGroup]="productForm" (ngSubmit)="updateProduct(id)">
+<h1>Xóa sản phẩm</h1>
+<form [formGroup]="productForm" (ngSubmit)="deleteProduct(id)">
   <table>
     <tr>
-      <td>Mã sản phẩm:</td>
+      <td>Mã sản phẩm</td>
       <td><input type="number" formControlName="id"></td>
     </tr>
     <tr>
-      <td>Tên sản phẩm:</td>
+      <td>Tên sản phẩm</td>
       <td><input type="text" formControlName="name"></td>
     </tr>
     <tr>
@@ -19,7 +19,7 @@
     </tr>
     <tr>
       <td></td>
-      <td><button>Cập nhật</button></td>
+      <td><button>Xóa</button></td>
     </tr>
   </table>
 </form>

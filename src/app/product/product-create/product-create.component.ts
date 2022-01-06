@@ -15,9 +15,14 @@ productForm: FormGroup = new FormGroup({
   description: new FormControl()
 });
   constructor(private  productService: ProductService) { }
-submit(){
+
+  submit(){
     const product = this.productForm.value;
-    this.productService.saveProduct(product);
+    this.productService.saveProduct(product).subscribe(()=>{
+      alert('Tạo thành công')
+    },error => {
+      console.log(error)
+    });
     this.productForm.reset();
 }
   ngOnInit(): void {

@@ -14,10 +14,12 @@ products: Product[] = [];
   }
 
   ngOnInit(){
-    this.getAll();
-  }
-  getAll(){
-    this.products = this.productService.getAll();
+    this.productService.getAll().subscribe(data=>{
+      console.log(data);
+      this.products = data;
+    },error => {
+      console.log(error);
+    });
   }
 
 }
